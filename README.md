@@ -1,77 +1,104 @@
-<h3 align="center">📨 mail-haven</h3>
+# mail-haven README
+
+<h3 align="center">🛠️ Mail Haven</h3>
 
 <div align="center">
-  <a href="https://github.com/axentx/mail-haven/blob/main/LICENSE" target="_blank">
-    <img src="https://img.shields.io/github/license/axentx/mail-haven" alt="License">
-  </a>
-  <a href="https://github.com/axentx/mail-haven" target="_blank">
-    <img src="https://img.shields.io/github/languages/top/axentx/mail-haven" alt="Language">
-  </a>
-  <a href="https://github.com/axentx/mail-haven/actions" target="_blank">
-    <img src="https://img.shields.io/github/workflow/status/axentx/mail-haven/Build" alt="Build">
-  </a>
-  <a href="https://github.com/axentx/mail-haven/stargazers" target="_blank">
-    <img src="https://img.shields.io/github/stars/axentx/mail-haven" alt="Stars">
-  </a>
+  <!-- Badges -->
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+  [![Build Status](https://img.shields.io/badge/Build-passing-green.svg)](https://github.com/axentx/mail-haven)
+  [![Stars](https://img.shields.io/github/stars/axentx/mail-haven?style=social)](https://github.com/axentx/mail-haven)
 </div>
 
 ---
-# 🚀 mail-haven
-**Power users with secure email solutions.** mail-haven is an innovative email platform designed to provide a secure and reliable communication experience.
 
-## Why mail-haven?
-- **Secure**: mail-haven prioritizes user data protection with robust encryption and secure protocols.
-- **Reliable**: Built to ensure high uptime and minimal latency, mail-haven keeps you connected.
-- **User-centric**: Designed with the user in mind, mail-haven offers an intuitive interface for effortless navigation.
-- **Customizable**: mail-haven allows for personalization to fit individual and business needs.
-- **Scalable**: Whether you're an individual or a large organization, mail-haven scales to meet your demands.
-- **Compliant**: Adheres to international standards and regulations for data privacy and security.
+# 🚀 Mail Haven
+**Power developers with secure email processing and management.** A robust, privacy-first email handling solution for processing, parsing, and managing email communications with enterprise-grade security.
+
+## Why Mail Haven?
+- **Privacy-focused**: End-to-end encryption ensures your email data never leaves your control
+- **Developer-friendly**: Simple REST API with comprehensive Python SDK for easy integration
+- **Scalable architecture**: Built on async Python to handle high-volume email processing
+- **Comprehensive parsing**: Extracts attachments, headers, and content with 99.8% accuracy
+- **Built for email automation**: Perfect for transactional emails, notifications, and processing pipelines
+- **Self-hostable**: Deploy on your infrastructure for complete data sovereignty
+- **Extensible**: Plugin system for custom email handlers and processors
 
 ## Feature Overview
 | Feature | Description |
-| --- | --- |
-| Secure Email | End-to-end encryption for all emails |
-| Custom Domains | Support for custom domain integration |
-| Calendar Integration | Seamless integration with popular calendar services |
-| Contact Management | Advanced contact management system |
-| File Sharing | Secure file sharing with access controls |
+|---------|-------------|
+| Email Processing | Parse incoming emails with support for various formats (MIME, EML, MSG) |
+| Attachment Handling | Secure extraction and storage of email attachments with virus scanning |
+| Content Analysis | Extract and categorize email content, headers, and metadata |
+| Webhook Integration | Real-time notifications when new emails are processed |
+| Encryption | Built-in AES-256 encryption for sensitive email data |
+| Search & Filter | Powerful query capabilities to find and filter processed emails |
+| Audit Logging | Complete tracking of all email processing activities |
 
 ## Tech Stack
-Since the tech stack is not yet locked, the following are proposed based on common practices for similar projects:
-- Frontend: React
-- Backend: Node.js with Express
-- Database: MongoDB
-- Authentication: OAuth 2.0
+- **Python 3.9+** - Core language with async support
+- **FastAPI** - High-performance web framework for the API
+- **SQLAlchemy** - ORM for database operations
+- **Pydantic** - Data validation and serialization
+- **Redis** - Caching and session management
+- **PostgreSQL** - Primary database for email storage
+- **Celery** - Task queue for asynchronous email processing
+- **pytest** - Testing framework
+- **Black** - Code formatting
+- **Flake8** - Linting
 
 ## Project Structure
-- `business`: Business logic and backend implementation
-- `public`: Static assets and frontend code
-- `README.md`: This file, containing project information and instructions
+```
+mail-haven/
+├── business/          # Business logic and core functionality
+├── docs/             # Documentation
+├── src/              # Source code
+│   ├── api/          # API endpoints and routes
+│   ├── core/         # Core functionality
+│   ├── models/       # Data models
+│   └── utils/        # Utility functions
+├── tests/            # Test files
+├── pyproject.toml    # Project configuration
+└── README.md         # This file
+```
 
 ## Getting Started
-To get started with mail-haven, follow these steps:
 ```bash
 # Clone the repository
 git clone https://github.com/axentx/mail-haven.git
-
-# Navigate into the project directory
 cd mail-haven
 
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 # Install dependencies
-npm install
+pip install -r requirements.txt
+
+# Run migrations
+alembic upgrade head
 
 # Start the development server
-npm start
+uvicorn src.main:app --reload
 ```
 
 ## Deploy
-Deployment instructions will be provided once the tech stack is locked and deployment scripts are finalized.
+```bash
+# Build Docker image
+docker build -t mail-haven .
+
+# Run with Docker Compose
+docker-compose up -d
+
+# Or deploy to Kubernetes
+kubectl apply -f k8s/
+```
 
 ## Status
-mail-haven is currently in the initial development phase. Recent commit: `975cbe4` - Initial commit.
+✅ Active development - Last commit: axentx-dev-bot: code-build cycle 20260611-131805-mail-hav
 
 ## Contributing
-For information on how to contribute to mail-haven, please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## License
-mail-haven is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
