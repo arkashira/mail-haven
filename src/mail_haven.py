@@ -23,25 +23,27 @@ class MailHaven:
 
 def main():
     parser = ArgumentParser(description='Mail Haven Documentation and Support')
-    parser.add_argument('--deployment-guide', help='Step-by-step deployment guide')
-    parser.add_argument('--troubleshooting-guide', help='Troubleshooting guide')
-    parser.add_argument('--support-channels', nargs='+', help='Basic support channels')
+    parser.add_argument('--deployment-guide', action='store_true', help='Print deployment guide')
+    parser.add_argument('--troubleshooting-guide', action='store_true', help='Print troubleshooting guide')
+    parser.add_argument('--support-channels', action='store_true', help='Print support channels')
     args = parser.parse_args()
 
     documentation = Documentation(
-        deployment_guide=args.deployment_guide,
-        troubleshooting_guide=args.troubleshooting_guide,
-        support_channels=args.support_channels
+        deployment_guide='Step-by-step deployment guide is available',
+        troubleshooting_guide='Troubleshooting guide is included',
+        support_channels=['Email', 'Phone', 'Chat']
     )
 
     mail_haven = MailHaven(documentation)
 
-    print('Deployment Guide:')
-    print(mail_haven.get_deployment_guide())
-    print('Troubleshooting Guide:')
-    print(mail_haven.get_troubleshooting_guide())
-    print('Support Channels:')
-    print(mail_haven.get_support_channels())
+    if args.deployment_guide:
+        print(mail_haven.get_deployment_guide())
+    elif args.troubleshooting_guide:
+        print(mail_haven.get_troubleshooting_guide())
+    elif args.support_channels:
+        print(mail_haven.get_support_channels())
+    else:
+        parser.print_help()
 
 if __name__ == '__main__':
     main()

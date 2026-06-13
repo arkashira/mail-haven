@@ -2,9 +2,12 @@
 This project provides comprehensive documentation and support for the Mail Haven email server.
 
 ## Usage
-To use this project, simply run the `mail_haven.py` script with the following arguments:
-* `--deployment-guide`: Step-by-step deployment guide
-* `--troubleshooting-guide`: Troubleshooting guide
-* `--support-channels`: Basic support channels
+To use this project, simply run the `mail_haven.py` script with the desired arguments.
 
-Example:
+## Arguments
+* `--deployment-guide`: Print the deployment guide
+* `--troubleshooting-guide`: Print the troubleshooting guide
+* `--support-channels`: Print the support channels
+
+## Tests
+To run the tests, use the `pytest` command.
