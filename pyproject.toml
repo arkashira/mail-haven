@@ -1,14 +1,11 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "axentx-product"
+name = "mail-haven"
 version = "0.1.0"
-description = "A minimal Axentx product package with a placeholder implementation."
-readme = "README.md"
-requires-python = ">=3.8"
-license = {text = "MIT"}
-authors = [
-    {name = "Axentx Team", email = "team@axentx.com"}
-]
+description = "Simple user management for email accounts (CLI & web)."
+authors = [{name = "Axentx"}]
+requires-python = ">=3.9"
+dependencies = []
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

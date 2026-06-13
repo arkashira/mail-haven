@@ -1,7 +1,11 @@
-# Axentx Product
+# mail-haven
 
-A minimal, importable Python package used for the Axentx autonomous AI‑workforce pipeline.
+A tiny, pure‑Python user‑management tool for email accounts.
 
-The package currently provides a placeholder implementation and a dummy test suite that always passes. This structure ensures that the test runner discovers and executes at least one test, satisfying the CI requirements.
+## Features
 
-Future development can replace the placeholder code with real product logic while keeping the package layout unchanged.
+* **CLI** – add, edit, deactivate, delete and list users.
+* **Web UI** – tiny HTTP server (standard library) with a basic HTML interface.
+* Stores data in a JSON file (`users.json` by default).
+
+## Installation
