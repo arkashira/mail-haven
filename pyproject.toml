@@ -4,8 +4,8 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "mail-haven"
-version = "1.0.0"
-description = "Mail Haven Documentation and Support"
+version = "0.1.0"
+description = "A self-hosted email solution"
 
 [tool.poetry.dependencies]
 python = "^3.8"
