@@ -1,7 +1,10 @@
-# Mail Haven
-
-A self-hosted email solution.
+# Mail Haven Documentation and Support
+This project provides comprehensive documentation and support for the Mail Haven email server.
 
 ## Usage
+To use this project, simply run the `mail_haven.py` script with the following arguments:
+* `--deployment-guide`: Step-by-step deployment guide
+* `--troubleshooting-guide`: Troubleshooting guide
+* `--support-channels`: Basic support channels
 
-To deploy an email server, run the following command:
+Example:

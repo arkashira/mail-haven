@@ -1,36 +1,47 @@
-import argparse
 import json
 from dataclasses import dataclass
-from typing import Dict
+from argparse import ArgumentParser
 
 @dataclass
-class EmailServerConfig:
-    domain: str
-    port: int
-    username: str
-    password: str
+class Documentation:
+    deployment_guide: str
+    troubleshooting_guide: str
+    support_channels: list
 
-def generate_config(domain: str, port: int, username: str, password: str) -> Dict:
-    return {
-        "domain": domain,
-        "port": port,
-        "username": username,
-        "password": password
-    }
+class MailHaven:
+    def __init__(self, documentation: Documentation):
+        self.documentation = documentation
 
-def deploy_email_server(config: Dict) -> None:
-    print(f"Deploying email server with config: {json.dumps(config)}")
+    def get_deployment_guide(self):
+        return self.documentation.deployment_guide
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Deploy an email server")
-    parser.add_argument("--domain", required=True, help="Email server domain")
-    parser.add_argument("--port", type=int, default=25, help="Email server port")
-    parser.add_argument("--username", required=True, help="Email server username")
-    parser.add_argument("--password", required=True, help="Email server password")
+    def get_troubleshooting_guide(self):
+        return self.documentation.troubleshooting_guide
+
+    def get_support_channels(self):
+        return self.documentation.support_channels
+
+def main():
+    parser = ArgumentParser(description='Mail Haven Documentation and Support')
+    parser.add_argument('--deployment-guide', help='Step-by-step deployment guide')
+    parser.add_argument('--troubleshooting-guide', help='Troubleshooting guide')
+    parser.add_argument('--support-channels', nargs='+', help='Basic support channels')
     args = parser.parse_args()
 
-    config = generate_config(args.domain, args.port, args.username, args.password)
-    deploy_email_server(config)
+    documentation = Documentation(
+        deployment_guide=args.deployment_guide,
+        troubleshooting_guide=args.troubleshooting_guide,
+        support_channels=args.support_channels
+    )
 
-if __name__ == "__main__":
+    mail_haven = MailHaven(documentation)
+
+    print('Deployment Guide:')
+    print(mail_haven.get_deployment_guide())
+    print('Troubleshooting Guide:')
+    print(mail_haven.get_troubleshooting_guide())
+    print('Support Channels:')
+    print(mail_haven.get_support_channels())
+
+if __name__ == '__main__':
     main()
